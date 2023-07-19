@@ -1,0 +1,69 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Mutation {
+  """Crear un usuario"""
+  createUser(user: NewUserDto!): User!
+
+  """Eliminar un usuario"""
+  deleteUser(
+    """ID del usuario"""
+    id: String!
+  ): Boolean!
+
+  """Actualizar un usuario"""
+  updateUser(
+    """ID del usuario"""
+    id: String!
+    user: UpdateUserDto!
+  ): User!
+}
+
+input NewUserDto {
+  """Correo electrónico del usuario"""
+  email: String!
+
+  """Nombre del usuario"""
+  name: String
+
+  """Contraseña del usuario"""
+  password: String!
+}
+
+type Query {
+  """Obtener todos los usuarios"""
+  getAllUsers: [User!]!
+
+  """Obtener un usuario"""
+  getUser(
+    """ID del usuario"""
+    id: String!
+  ): User!
+  hello: String!
+}
+
+input UpdateUserDto {
+  """Correo electrónico del usuario"""
+  email: String
+
+  """Nombre del usuario"""
+  name: String
+
+  """Contraseña del usuario"""
+  password: String
+}
+
+type User {
+  """Correo electrónico del usuario"""
+  email: String!
+
+  """Identificador único del usuario"""
+  id: String!
+
+  """Nombre del usuario"""
+  name: String
+
+  """Contraseña del usuario"""
+  password: String!
+}
